@@ -189,7 +189,7 @@
       <div class="f1-section-bar">
         <div>
           <h2 class="f1-section-title">The Definitive Eras of Formula 1</h2>
-          <span class="f1-section-subtitle">Select an era below to explore seven decades of speed and technical revolutions</span>
+          <span class="f1-section-subtitle">Select an era below to explore four defining chapters of speed and technical revolutions</span>
         </div>
         <span class="f1-history-badge">Interactive Chronicle</span>
       </div>
@@ -197,37 +197,21 @@
       <!-- ERA BUTTON TABS -->
       <div class="f1-era-tabs-wrapper">
         <div class="f1-era-tabs-container">
-          <button type="button" class="f1-era-tab-btn active" data-era="era-1950s" onclick="selectEra('era-1950s')">
+          <button type="button" class="f1-era-tab-btn active" data-era="era-1950-1969" onclick="selectEra('era-1950-1969')">
             <span class="f1-era-tab-badge">Era I</span>
-            <span class="f1-era-tab-years">1950 &ndash; 1959</span>
+            <span class="f1-era-tab-years">1950 &ndash; 1969</span>
           </button>
-          <button type="button" class="f1-era-tab-btn" data-era="era-1960s" onclick="selectEra('era-1960s')">
+          <button type="button" class="f1-era-tab-btn" data-era="era-1970-1989" onclick="selectEra('era-1970-1989')">
             <span class="f1-era-tab-badge">Era II</span>
-            <span class="f1-era-tab-years">1960 &ndash; 1969</span>
+            <span class="f1-era-tab-years">1970 &ndash; 1989</span>
           </button>
-          <button type="button" class="f1-era-tab-btn" data-era="era-1970s" onclick="selectEra('era-1970s')">
+          <button type="button" class="f1-era-tab-btn" data-era="era-1990-2009" onclick="selectEra('era-1990-2009')">
             <span class="f1-era-tab-badge">Era III</span>
-            <span class="f1-era-tab-years">1970 &ndash; 1979</span>
+            <span class="f1-era-tab-years">1990 &ndash; 2009</span>
           </button>
-          <button type="button" class="f1-era-tab-btn" data-era="era-1980s" onclick="selectEra('era-1980s')">
+          <button type="button" class="f1-era-tab-btn" data-era="era-2010-present" onclick="selectEra('era-2010-present')">
             <span class="f1-era-tab-badge">Era IV</span>
-            <span class="f1-era-tab-years">1980 &ndash; 1989</span>
-          </button>
-          <button type="button" class="f1-era-tab-btn" data-era="era-1990s" onclick="selectEra('era-1990s')">
-            <span class="f1-era-tab-badge">Era V</span>
-            <span class="f1-era-tab-years">1990 &ndash; 1999</span>
-          </button>
-          <button type="button" class="f1-era-tab-btn" data-era="era-2000s" onclick="selectEra('era-2000s')">
-            <span class="f1-era-tab-badge">Era VI</span>
-            <span class="f1-era-tab-years">2000 &ndash; 2009</span>
-          </button>
-          <button type="button" class="f1-era-tab-btn" data-era="era-2010s" onclick="selectEra('era-2010s')">
-            <span class="f1-era-tab-badge">Era VII</span>
-            <span class="f1-era-tab-years">2010 &ndash; 2019</span>
-          </button>
-          <button type="button" class="f1-era-tab-btn" data-era="era-2020s" onclick="selectEra('era-2020s')">
-            <span class="f1-era-tab-badge">Era VIII</span>
-            <span class="f1-era-tab-years">2020 &ndash; Present</span>
+            <span class="f1-era-tab-years">2010 &ndash; Present</span>
           </button>
         </div>
       </div>
@@ -235,19 +219,19 @@
       <!-- ERA PANELS -->
       <div class="f1-era-panels-wrapper">
 
-        <!-- ERA 1: 1950s -->
-        <article id="era-1950s" class="f1-era-panel active">
+        <!-- ERA 1: 1950-1969 -->
+        <article id="era-1950-1969" class="f1-era-panel active">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
-                <span class="f1-era-pill">Era I &bull; 1950 &ndash; 1959</span>
-                <h3 class="f1-era-card-title">The Genesis: Front-Engine Titans and Post-War Pioneers</h3>
+                <span class="f1-era-pill">Era I &bull; 1950 &ndash; 1969</span>
+                <h3 class="f1-era-card-title">The Genesis and Mid-Engine Revolution</h3>
               </div>
               <span class="f1-history-badge-outline">Alfa Romeo &bull; Ferrari &bull; Maserati &bull; Vanwall</span>
             </div>
             <div class="f1-era-card-body">
               <div class="f1-era-media-col">
-                <img src="images/image_46.jpg" alt="1950s Formula 1 Era" class="f1-era-media-img" loading="lazy">
+                <img src="images/image_46.jpg" alt="1950s and 1960s Formula 1 Era" class="f1-era-media-img" loading="lazy">
                 <div class="f1-era-stats-box">
                   <div class="f1-era-stat-item">
                     <span class="f1-era-stat-label">Decade Champion</span>
@@ -278,43 +262,43 @@
                 <!-- Card Pagination Footer -->
                 <div class="f1-era-nav-footer">
                   <button type="button" class="f1-era-pager-btn" disabled>&larr; Previous Era</button>
-                  <span class="f1-era-pager-counter">Era 1 of 8</span>
-                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1960s')">Next Era: 1960s &rarr;</button>
+                  <span class="f1-era-pager-counter">Era 1 of 4</span>
+                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1970-1989')">Next Era: 1970s&ndash;1980s &rarr;</button>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- ERA 2: 1960s -->
-        <article id="era-1960s" class="f1-era-panel">
+        <!-- ERA 2: 1970-1989 -->
+        <article id="era-1970-1989" class="f1-era-panel">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
-                <span class="f1-era-pill">Era II &bull; 1960 &ndash; 1969</span>
-                <h3 class="f1-era-card-title">The Mid-Engine Revolution, Monocoques and Aerodynamic Dawn</h3>
+                <span class="f1-era-pill">Era II &bull; 1970 &ndash; 1989</span>
+                <h3 class="f1-era-card-title">Ground Effect, Turbo Titans and the Carbon Revolution</h3>
               </div>
               <span class="f1-history-badge-outline">Cooper &bull; Lotus &bull; BRM &bull; Brabham &bull; Matra</span>
             </div>
             <div class="f1-era-card-body">
               <div class="f1-era-media-col">
-                <img src="images/image_22.jpg" alt="1960s Formula 1 Era" class="f1-era-media-img" loading="lazy">
+                <img src="images/2284609937.webp" alt="1970s and 1980s Formula 1 Era" class="f1-era-media-img" loading="lazy">
                 <div class="f1-era-stats-box">
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Key Drivers</span>
-                    <span class="f1-era-stat-val">Jim Clark &bull; J. Stewart</span>
+                    <span class="f1-era-stat-label">Iconic Champions</span>
+                    <span class="f1-era-stat-val">Niki Lauda &bull; Alain Prost</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Chassis Milestone</span>
-                    <span class="f1-era-stat-val">Lotus 25 Monocoque</span>
+                    <span class="f1-era-stat-label">Aero Breakthrough</span>
+                    <span class="f1-era-stat-val">Lotus 79 Ground Effect</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Engine Regulations</span>
-                    <span class="f1-era-stat-val">1.5L then 3.0L V8</span>
+                    <span class="f1-era-stat-label">Turbo Peak</span>
+                    <span class="f1-era-stat-val">1,400+ BHP qualifying trim</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Aero Milestone</span>
-                    <span class="f1-era-stat-val">High Wings (1968)</span>
+                    <span class="f1-era-stat-label">Material Pioneer</span>
+                    <span class="f1-era-stat-val">McLaren MP4/1 Carbon</span>
                   </div>
                 </div>
               </div>
@@ -328,44 +312,44 @@
 
                 <!-- Card Pagination Footer -->
                 <div class="f1-era-nav-footer">
-                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1950s')">&larr; Previous Era: 1950s</button>
-                  <span class="f1-era-pager-counter">Era 2 of 8</span>
-                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1970s')">Next Era: 1970s &rarr;</button>
+                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1950-1969')">&larr; Previous Era: 1950s&ndash;1960s</button>
+                  <span class="f1-era-pager-counter">Era 2 of 4</span>
+                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1990-2009')">Next Era: 1990s&ndash;2000s &rarr;</button>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- ERA 3: 1970s -->
-        <article id="era-1970s" class="f1-era-panel">
+        <!-- ERA 3: 1990-2009 -->
+        <article id="era-1990-2009" class="f1-era-panel">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
-                <span class="f1-era-pill">Era III &bull; 1970 &ndash; 1979</span>
-                <h3 class="f1-era-card-title">The Cosworth DFV Boom, Ground Effect and Safety Awakening</h3>
+                <span class="f1-era-pill">Era III &bull; 1990 &ndash; 2009</span>
+                <h3 class="f1-era-card-title">The Electronic Age, V10s and the Rise of Modern F1</h3>
               </div>
-              <span class="f1-history-badge-outline">Lotus &bull; Tyrrell &bull; Ferrari &bull; McLaren</span>
+              <span class="f1-history-badge-outline">Williams &bull; McLaren &bull; Ferrari &bull; Renault</span>
             </div>
             <div class="f1-era-card-body">
               <div class="f1-era-media-col">
-                <img src="images/2284609937.webp" alt="1970s Formula 1 Era" class="f1-era-media-img" loading="lazy">
+                <img src="images/2293801891.webp" alt="1990s and 2000s Formula 1 Era" class="f1-era-media-img" loading="lazy">
                 <div class="f1-era-stats-box">
                   <div class="f1-era-stat-item">
                     <span class="f1-era-stat-label">Iconic Champions</span>
-                    <span class="f1-era-stat-val">Niki Lauda &bull; E. Fittipaldi</span>
+                    <span class="f1-era-stat-val">Senna &bull; Schumacher &bull; H&auml;kkinen</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Aero Breakthrough</span>
-                    <span class="f1-era-stat-val">Lotus 79 Ground Effect</span>
+                    <span class="f1-era-stat-label">Tech Pinnacle</span>
+                    <span class="f1-era-stat-val">Williams FW14B Active</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Dominant Engine</span>
-                    <span class="f1-era-stat-val">Ford Cosworth DFV V8</span>
+                    <span class="f1-era-stat-label">Engine Era</span>
+                    <span class="f1-era-stat-val">3.0L V10 &amp; V8</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Radical Car</span>
-                    <span class="f1-era-stat-val">Tyrrell P34 6-Wheeler</span>
+                    <span class="f1-era-stat-label">Defining Shift</span>
+                    <span class="f1-era-stat-val">Safety and data systems</span>
                   </div>
                 </div>
               </div>
@@ -379,44 +363,44 @@
 
                 <!-- Card Pagination Footer -->
                 <div class="f1-era-nav-footer">
-                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1960s')">&larr; Previous Era: 1960s</button>
-                  <span class="f1-era-pager-counter">Era 3 of 8</span>
-                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1980s')">Next Era: 1980s &rarr;</button>
+                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1970-1989')">&larr; Previous Era: 1970s&ndash;1980s</button>
+                  <span class="f1-era-pager-counter">Era 3 of 4</span>
+                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-2010-present')">Next Era: 2010s&ndash;Present &rarr;</button>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- ERA 4: 1980s -->
-        <article id="era-1980s" class="f1-era-panel">
+        <!-- ERA 4: 2010-present -->
+        <article id="era-2010-present" class="f1-era-panel">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
-                <span class="f1-era-pill">Era IV &bull; 1980 &ndash; 1989</span>
-                <h3 class="f1-era-card-title">The 1,400+ Horsepower Turbo Titans and Carbon Fibre Revolution</h3>
+                <span class="f1-era-pill">Era IV &bull; 2010 &ndash; Present</span>
+                <h3 class="f1-era-card-title">The Hybrid Era and the Ground-Effect Revival</h3>
               </div>
               <span class="f1-history-badge-outline">McLaren &bull; Williams &bull; Brabham &bull; Ferrari</span>
             </div>
             <div class="f1-era-card-body">
               <div class="f1-era-media-col">
-                <img src="images/image_29.jpg" alt="1980s Formula 1 Era" class="f1-era-media-img" loading="lazy">
+                <img src="images/image_29.jpg" alt="2010s and present-day Formula 1 Era" class="f1-era-media-img" loading="lazy">
                 <div class="f1-era-stats-box">
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Legendary Rivalry</span>
-                    <span class="f1-era-stat-val">Senna vs Prost</span>
+                    <span class="f1-era-stat-label">Modern Dynasties</span>
+                    <span class="f1-era-stat-val">Mercedes &bull; Red Bull Racing</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Material Pioneer</span>
-                    <span class="f1-era-stat-val">McLaren MP4/1 Carbon</span>
+                    <span class="f1-era-stat-label">Power Unit</span>
+                    <span class="f1-era-stat-val">1.6L V6 Turbo-Hybrid</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Engine Output</span>
-                    <span class="f1-era-stat-val">1,400+ BHP Quali Trim</span>
+                    <span class="f1-era-stat-label">Aero Reset</span>
+                    <span class="f1-era-stat-val">Ground effect (2022)</span>
                   </div>
                   <div class="f1-era-stat-item">
-                    <span class="f1-era-stat-label">Dominant Car</span>
-                    <span class="f1-era-stat-val">1988 McLaren MP4/4</span>
+                    <span class="f1-era-stat-label">Global Grid</span>
+                    <span class="f1-era-stat-val">24-race calendar</span>
                   </div>
                 </div>
               </div>
@@ -430,9 +414,9 @@
 
                 <!-- Card Pagination Footer -->
                 <div class="f1-era-nav-footer">
-                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1970s')">&larr; Previous Era: 1970s</button>
-                  <span class="f1-era-pager-counter">Era 4 of 8</span>
-                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1990s')">Next Era: 1990s &rarr;</button>
+                  <button type="button" class="f1-era-pager-btn" onclick="selectEra('era-1970-1989')">&larr; Previous Era: 1970s&ndash;1980s</button>
+                  <span class="f1-era-pager-counter">Era 4 of 4</span>
+                  <button type="button" class="f1-era-pager-btn" disabled>Next Era &rarr;</button>
                 </div>
               </div>
             </div>
@@ -440,7 +424,7 @@
         </article>
 
         <!-- ERA 5: 1990s -->
-        <article id="era-1990s" class="f1-era-panel">
+        <article id="era-1990s" class="f1-era-panel" hidden aria-hidden="true">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
@@ -491,7 +475,7 @@
         </article>
 
         <!-- ERA 6: 2000s -->
-        <article id="era-2000s" class="f1-era-panel">
+        <article id="era-2000s" class="f1-era-panel" hidden aria-hidden="true">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
@@ -542,7 +526,7 @@
         </article>
 
         <!-- ERA 7: 2010s -->
-        <article id="era-2010s" class="f1-era-panel">
+        <article id="era-2010s" class="f1-era-panel" hidden aria-hidden="true">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
@@ -593,7 +577,7 @@
         </article>
 
         <!-- ERA 8: 2020s -->
-        <article id="era-2020s" class="f1-era-panel">
+        <article id="era-2020s" class="f1-era-panel" hidden aria-hidden="true">
           <div class="f1-era-card">
             <div class="f1-era-card-header">
               <div>
@@ -1923,14 +1907,10 @@
 <script>  
   (function() {
     var eraOrder = [
-      'era-1950s',
-      'era-1960s',
-      'era-1970s',
-      'era-1980s',
-      'era-1990s',
-      'era-2000s',
-      'era-2010s',
-      'era-2020s'
+      'era-1950-1969',
+      'era-1970-1989',
+      'era-1990-2009',
+      'era-2010-present'
     ];
 
     window.selectEra = function(eraId, doScroll) {
@@ -1983,7 +1963,7 @@
       });
 
       // Initialize default active era tab and panel
-      selectEra('era-1950s', false);
+      selectEra('era-1950-1969', false);
     }
 
     if (document.readyState === 'loading') {
