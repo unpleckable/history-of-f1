@@ -1069,6 +1069,69 @@ h1.f1-main-title {
   flex-direction: column;
 }
 
+.f1-circuit-image {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #263a38;
+  background-position: center;
+  background-size: 100% 100%;
+  border-bottom: 1px dashed #454550;
+  color: #a7a7b2;
+  font-family: "Formula1", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.f1-circuit-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(6, 14, 14, 0.22), transparent 42%, rgba(6, 14, 14, 0.28));
+}
+
+.f1-satellite-credit {
+  position: absolute;
+  right: 7px;
+  bottom: 6px;
+  padding: 3px 5px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.f1-circuit-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.9));
+  transform: none;
+}
+
+.f1-circuit-track path {
+  fill: none;
+  stroke: #ff2b25;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.f1-circuit-card:hover .f1-circuit-track path {
+  stroke: #fff;
+  stroke-width: 8;
+}
+
 .f1-circuit-header {
   padding: 18px 24px;
   background: #24242d;
@@ -1442,4 +1505,3 @@ h1.f1-main-title {
   color: #ffffff;
   text-decoration: underline;
 }
-

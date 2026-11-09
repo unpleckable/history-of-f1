@@ -1089,6 +1089,10 @@
 
         <!-- Monaco -->
         <div class="f1-circuit-card">
+          <div class="f1-circuit-image f1-satellite-monaco" role="img" aria-label="Satellite map of Circuit de Monaco with the circuit outline highlighted">
+            <svg class="f1-circuit-track" data-track-file="mc-1929.geojson" aria-hidden="true"></svg>
+            <span class="f1-satellite-credit">Esri World Imagery</span>
+          </div>
           <div class="f1-circuit-header">
             <div>
               <span class="f1-era-pill">Monaco &bull; Since 1950</span>
@@ -1106,6 +1110,10 @@
 
         <!-- Monza -->
         <div class="f1-circuit-card">
+          <div class="f1-circuit-image f1-satellite-monza" role="img" aria-label="Satellite map of Autodromo Nazionale Monza with the circuit outline highlighted">
+            <svg class="f1-circuit-track" data-track-file="it-1922.geojson" aria-hidden="true"></svg>
+            <span class="f1-satellite-credit">Esri World Imagery</span>
+          </div>
           <div class="f1-circuit-header">
             <div>
               <span class="f1-era-pill">Italy &bull; Since 1950</span>
@@ -1123,6 +1131,10 @@
 
         <!-- Spa-Francorchamps -->
         <div class="f1-circuit-card">
+          <div class="f1-circuit-image f1-satellite-spa" role="img" aria-label="Satellite map of Circuit de Spa-Francorchamps with the circuit outline highlighted">
+            <svg class="f1-circuit-track" data-track-file="be-1925.geojson" aria-hidden="true"></svg>
+            <span class="f1-satellite-credit">Esri World Imagery</span>
+          </div>
           <div class="f1-circuit-header">
             <div>
               <span class="f1-era-pill">Belgium &bull; Since 1950</span>
@@ -1140,6 +1152,10 @@
 
         <!-- Silverstone -->
         <div class="f1-circuit-card">
+          <div class="f1-circuit-image f1-satellite-silverstone" role="img" aria-label="Satellite map of Silverstone Circuit with the circuit outline highlighted">
+            <svg class="f1-circuit-track" data-track-file="gb-1948.geojson" aria-hidden="true"></svg>
+            <span class="f1-satellite-credit">Esri World Imagery</span>
+          </div>
           <div class="f1-circuit-header">
             <div>
               <span class="f1-era-pill">Great Britain &bull; Since 1950</span>
@@ -1157,6 +1173,10 @@
 
         <!-- NÃ¼rburgring Nordschleife -->
         <div class="f1-circuit-card">
+          <div class="f1-circuit-image f1-satellite-nurburgring" role="img" aria-label="Satellite map of Nürburgring Nordschleife with the circuit outline highlighted">
+            <svg class="f1-circuit-track" data-track-file="de-1927.geojson" aria-hidden="true"></svg>
+            <span class="f1-satellite-credit">Esri World Imagery</span>
+          </div>
           <div class="f1-circuit-header">
             <div>
               <span class="f1-era-pill">Germany &bull; Historic (1951-1976)</span>
@@ -1174,6 +1194,10 @@
 
         <!-- Interlagos -->
         <div class="f1-circuit-card">
+          <div class="f1-circuit-image f1-satellite-interlagos" role="img" aria-label="Satellite map of Autódromo José Carlos Pace with the circuit outline highlighted">
+            <svg class="f1-circuit-track" data-track-file="br-1940.geojson" aria-hidden="true"></svg>
+            <span class="f1-satellite-credit">Esri World Imagery</span>
+          </div>
           <div class="f1-circuit-header">
             <div>
               <span class="f1-era-pill">Brazil &bull; Since 1973</span>
@@ -1972,6 +1996,86 @@
       initEras();
     }
   })();
+</script>
+<script>
+  (function () {
+    var trackBaseUrl = 'https://raw.githubusercontent.com/bacinger/f1-circuits/master/circuits/';
+    var imageryUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export';
+
+    function getTrackBounds(coordinates) {
+      var bounds = coordinates.reduce(function (result, point) {
+        result.minLon = Math.min(result.minLon, point[0]);
+        result.maxLon = Math.max(result.maxLon, point[0]);
+        result.minLat = Math.min(result.minLat, point[1]);
+        result.maxLat = Math.max(result.maxLat, point[1]);
+        return result;
+      }, { minLon: Infinity, maxLon: -Infinity, minLat: Infinity, maxLat: -Infinity });
+      var lonSpan = bounds.maxLon - bounds.minLon;
+      var latSpan = bounds.maxLat - bounds.minLat;
+      var targetAspect = 16 / 9;
+      var paddedLonSpan = lonSpan * 1.18;
+      var paddedLatSpan = latSpan * 1.18;
+      if (paddedLonSpan / paddedLatSpan < targetAspect) {
+        paddedLonSpan = paddedLatSpan * targetAspect;
+      } else {
+        paddedLatSpan = paddedLonSpan / targetAspect;
+      }
+      var centerLon = (bounds.minLon + bounds.maxLon) / 2;
+      var centerLat = (bounds.minLat + bounds.maxLat) / 2;
+      return {
+        minLon: centerLon - paddedLonSpan / 2,
+        maxLon: centerLon + paddedLonSpan / 2,
+        minLat: centerLat - paddedLatSpan / 2,
+        maxLat: centerLat + paddedLatSpan / 2
+      };
+    }
+
+    function renderTrack(svg, feature) {
+      var coordinates = feature.geometry.coordinates;
+      var bounds = getTrackBounds(coordinates);
+      var width = 640;
+      var height = 360;
+      var points = coordinates.map(function (point) {
+        var x = ((point[0] - bounds.minLon) / (bounds.maxLon - bounds.minLon)) * width;
+        var y = (1 - (point[1] - bounds.minLat) / (bounds.maxLat - bounds.minLat)) * height;
+        return [x.toFixed(2), y.toFixed(2)];
+      });
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', 'M' + points.map(function (point) {
+        return point.join(' ');
+      }).join(' L'));
+      svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+      svg.appendChild(path);
+
+      var cardImage = svg.parentElement;
+      var bbox = [bounds.minLon, bounds.minLat, bounds.maxLon, bounds.maxLat].join(',');
+      var params = new URLSearchParams({
+        bbox: bbox,
+        bboxSR: '4326',
+        imageSR: '4326',
+        size: '960,540',
+        format: 'jpg',
+        f: 'image'
+      });
+      cardImage.style.backgroundImage = 'url("' + imageryUrl + '?' + params.toString() + '")';
+    }
+
+    document.querySelectorAll('.f1-circuit-track[data-track-file]').forEach(function (svg) {
+      fetch(trackBaseUrl + svg.dataset.trackFile)
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('Unable to load circuit data: ' + response.status);
+          }
+          return response.json();
+        })
+        .then(function (geojson) {
+          renderTrack(svg, geojson.features[0]);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    });
+  }());
 </script>
 </body>
 </html>
