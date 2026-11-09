@@ -40,6 +40,8 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #e10600 #101015;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--f1-scroll-offset, 70px);
+  overscroll-behavior: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -126,6 +128,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 /* Base resets & typography */
@@ -152,7 +155,7 @@ body {
 }
 
 section[id] {
-  scroll-margin-top: 70px;
+  scroll-margin-top: var(--f1-scroll-offset, 70px);
 }
 
 .f1-section-dark-bg {

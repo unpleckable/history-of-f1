@@ -1905,7 +1905,7 @@
         <a href="#cathedral-circuits">Circuits</a>
         <!-- <a href="#champions-archive">Champions</a> -->
         <a href="#historical-lore">Lore</a>
-        <a href="#maincontent" class="f1-footer-top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">&uarr; Back to Top</a>
+        <a href="#maincontent" class="f1-footer-top-btn">&uarr; Back to Top</a>
       </nav>
     </div>
 
@@ -1923,6 +1923,75 @@
     </div>
   </div>
 </footer>
+<script>
+  (function () {
+    var header = document.querySelector('.f1-site-header');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function updateScrollOffset() {
+      if (header) {
+        document.documentElement.style.setProperty(
+          '--f1-scroll-offset',
+          Math.ceil(header.getBoundingClientRect().height + 10) + 'px'
+        );
+      }
+    }
+
+    function focusTarget(target) {
+      if (!target.hasAttribute('tabindex')) {
+        target.setAttribute('tabindex', '-1');
+      }
+      target.focus({ preventScroll: true });
+    }
+
+    function scrollToTarget(target, updateHistory) {
+      var offset = parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue('--f1-scroll-offset')
+      ) || 70;
+      var top = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - offset);
+
+      window.scrollTo({
+        top: top,
+        behavior: reduceMotion.matches ? 'auto' : 'smooth'
+      });
+      focusTarget(target);
+
+      if (updateHistory) {
+        history.pushState(null, '', '#' + target.id);
+      }
+    }
+
+    function handleAnchorClick(event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (!link || link.getAttribute('href') === '#') return;
+
+      var target = document.getElementById(link.getAttribute('href').slice(1));
+      if (!target) return;
+
+      event.preventDefault();
+      scrollToTarget(target, true);
+    }
+
+    updateScrollOffset();
+    window.addEventListener('resize', updateScrollOffset);
+    document.addEventListener('click', handleAnchorClick);
+    window.addEventListener('popstate', function () {
+      var target = window.location.hash
+        ? document.getElementById(window.location.hash.slice(1))
+        : null;
+      if (target) scrollToTarget(target, false);
+    });
+
+    if (header && 'ResizeObserver' in window) {
+      new ResizeObserver(updateScrollOffset).observe(header);
+    }
+
+    if (window.location.hash) {
+      var initialTarget = document.getElementById(window.location.hash.slice(1));
+      if (initialTarget) scrollToTarget(initialTarget, false);
+    }
+  }());
+</script>
 <script>  
   (function() {
     var eraOrder = [
@@ -1962,9 +2031,14 @@
       if (doScroll) {
         var section = document.getElementById('eras-chronicle');
         if (section) {
-          var yOffset = -70;
-          var y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          var offset = parseFloat(
+            getComputedStyle(document.documentElement).getPropertyValue('--f1-scroll-offset')
+          ) || 70;
+          var y = section.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({
+            top: Math.max(0, y),
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+          });
         }
       }
     };
