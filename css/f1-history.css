@@ -21,6 +21,16 @@
   --f1-text-dim: #707078;
 }
 
+::selection {
+  background-color: var(--f1-red);
+  color: var(--f1-text-main);
+}
+
+::-moz-selection {
+  background-color: var(--f1-red);
+  color: var(--f1-text-main);
+}
+
 /* ==========================================================================
    FORMULA 1 RACING THEMED SCROLLBARS
    ========================================================================== */
@@ -1136,10 +1146,19 @@ h1.f1-main-title {
   padding: 18px 24px;
   background: #24242d;
   border-bottom: 1px solid #272730;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+}
+
+.f1-circuit-header > div {
+  min-width: 0;
+}
+
+.f1-circuit-header .f1-history-badge-outline {
+  white-space: nowrap;
 }
 
 .f1-circuit-title {
@@ -1149,6 +1168,20 @@ h1.f1-main-title {
   text-transform: uppercase !important;
   color: #ffffff !important;
   margin: 4px 0 0 0 !important;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 680px) {
+  .f1-circuit-header {
+    padding: 14px 16px;
+    align-items: flex-start;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .f1-circuit-header .f1-history-badge-outline {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
 }
 
 .f1-circuit-body {
