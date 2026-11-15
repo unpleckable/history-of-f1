@@ -58,6 +58,13 @@
 
   <!-- ==================== HERO SECTION: 1950 - PRESENT HERITAGE ==================== -->
   <section class="f1-history-hero">
+    <div class="f1-history-hero-video-stage" aria-hidden="true">
+      <video class="f1-history-hero-video is-active" autoplay muted loop playsinline preload="auto" poster="images/f1-hero-01-poster.jpg">
+        <source src="images/f1-hero-01.mp4" type="video/mp4">
+      </video>
+      <video class="f1-history-hero-video" muted loop playsinline preload="auto"></video>
+    </div>
+    <div class="f1-history-hero-video-overlay" aria-hidden="true"></div>
     <div class="f1-history-container">
       
       <!-- Top Heritage Breadcrumb / Tag -->
@@ -994,8 +1001,8 @@
       
       <div class="f1-section-bar">
         <div>
-          <h2 class="f1-section-title">Technical Heritage &amp; Engineering</h2>
-          <span class="f1-section-subtitle">The Engineering Feats That Revolutionised Automotive Science</span>
+          <h2 class="f1-section-title">Technical History &amp; Engineering</h2>
+          <span class="f1-section-subtitle">Outstanding technical achievements in Formula 1</span>
         </div>
         <!-- <span class="f1-history-badge">Technical Evolution</span> -->
       </div>
@@ -1003,7 +1010,7 @@
       <!-- Essay 1: Chassis & Materials -->
       <article class="f1-tech-article">
         <span class="f1-history-badge-outline">Driver Safety</span>
-        <h3 class="f1-tech-title">The Halo Cockpit</h3>
+        <h3 class="f1-tech-title">Halo Cockpit</h3>
         <!-- <p class="f1-tech-subtitle">1962 Lotus 25 Stressed Monocoque to 1981 McLaren MP4/1 Carbon Composite</p> -->
         
         <div class="f1-tech-columns f1-history-prose">
@@ -1029,22 +1036,22 @@
 
       <!-- Essay 2: Aerodynamics & Ground Effect -->
       <article class="f1-tech-article">
-        <span class="f1-history-badge-outline">Aerodynamics &amp; Downforce</span>
-        <h3 class="f1-tech-title">The Downforce Odyssey: From High Wings to 3D Venturi Floors</h3>
-        <p class="f1-tech-subtitle">Inverted Airfoils, Movable Skirts, Fan Cars and DRS Efficiency</p>
+        <span class="f1-history-badge-outline">Aerodynamics</span>
+        <h3 class="f1-tech-title">DRS (Drag Reduction System, 2011-2025)</h3>
+        <!-- <p class="f1-tech-subtitle">Inverted Airfoils, Movable Skirts, Fan Cars and DRS Efficiency</p> -->
         
         <div class="f1-tech-columns f1-history-prose">
           <div>
-            <p class="f1-prose-lead">
+            <!-- <p class="f1-prose-lead">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            </p> -->
             <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              A movable rear-wing flap that reduced aerodynamic drag and increased straight-line speed to facilitate overtaking. Replaced in 2026 by the combination of Active Aerodynamics and Overtake Mode.
             </p>
           </div>
           <div>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              Jenson Button and Andrea Kimi Antonelli were the first and the last to use it. Additionally, Fernando Alonso and Lance Stroll performed the first and the last successful overtake with DRS.
             </p>
           </div>
         </div>
@@ -1052,22 +1059,22 @@
 
       <!-- Essay 3: Engine Regulations -->
       <article class="f1-tech-article">
-        <span class="f1-history-badge-outline">Powertrain History</span>
-        <h3 class="f1-tech-title">The Symphony of Power: Atmospheric V12s to Hybrid Power Units</h3>
-        <p class="f1-tech-subtitle">Cosworth DFV V8, BMW Turbo Monsters, 19,000 RPM V10s and 50%+ Thermal Efficiency</p>
+        <span class="f1-history-badge-outline">Energy Systems</span>
+        <h3 class="f1-tech-title">ERS (Energy Recovery System)</h3>
+        <!-- <p class="f1-tech-subtitle">Cosworth DFV V8, BMW Turbo Monsters, 19,000 RPM V10s and 50%+ Thermal Efficiency</p> -->
         
         <div class="f1-tech-columns f1-history-prose">
           <div>
-            <p class="f1-prose-lead">
+            <!-- <p class="f1-prose-lead">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            </p> -->
             <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              ERSis a technology used in Formula 1 that recovers energy during braking and converts it into electrical power, which is stored in a battery and reused when needed. Its predecessor, KERS (Kinetic Energy Recovery System), was introduced in 2009 and focused on recovering kinetic energy under braking.
             </p>
           </div>
           <div>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              ERS gives F1 cars additional electrical power, helping drivers accelerate faster and overtake competitors. Its predecessor, KERS, demonstrated this advantage in 2009, when Lewis Hamilton used the system during his pole-position qualifying  at the Italian Grand Prix.
             </p>
           </div>
         </div>
@@ -1083,7 +1090,7 @@
       <div class="f1-section-bar">
         <div>
           <h2 class="f1-section-title">Iconic Circuits</h2>
-          <span class="f1-section-subtitle">The tracks that have witnessed the greatest moments in Formula 1 history</span>
+          <span class="f1-section-subtitle">The most iconic tracks in Formula 1 history</span>
         </div>
         <!-- <span class="f1-history-badge">Historic Circuits</span> -->
       </div>
@@ -1903,14 +1910,14 @@
             <path d="M1367.21 312.501C1379.83 312.501 1390.25 316.71 1398.5 325.168C1406.75 333.626 1410.88 344.001 1410.88 356.334C1410.88 368.667 1406.79 379.043 1398.58 387.418C1390.38 395.793 1380 400.001 1367.38 400.001C1354.75 400.001 1344.25 395.792 1335.92 387.334C1327.54 378.876 1323.38 368.501 1323.38 356.168C1323.38 343.835 1327.54 333.459 1335.83 325.084C1344.13 316.709 1354.59 312.501 1367.21 312.501ZM1167.04 149.792H635.292C501.959 149.792 473.584 160.083 403.667 227.875H403.708L226.292 400H0L281.542 120.583C386.208 17 436.667 4.27469e-06 615.125 0H1320.04L1167.04 149.792ZM1144.21 173.708L1003.96 313.958H641.125C574.625 313.958 559.917 317.083 526.917 350.083L477 400H267.167L422.292 244.875C483.209 184 504.209 173.708 638.5 173.708H1144.21ZM1600 0L1198.92 400H950.875L1350.88 0H1600ZM1367.13 319.376C1356.79 319.376 1348.13 322.96 1341.13 330.126C1334.17 337.293 1330.67 345.96 1330.67 356.168C1330.67 366.376 1334.17 375.042 1341.13 382.209C1348.09 389.376 1356.75 392.959 1367.13 392.959C1377.5 392.959 1386.13 389.418 1393.13 382.293C1400.09 375.168 1403.58 366.501 1403.58 356.251C1403.58 346.001 1400.09 337.293 1393.13 330.126C1386.17 322.959 1377.5 319.376 1367.13 319.376ZM1367.21 332.084C1373.5 332.084 1378.25 333.251 1381.42 335.626C1384.58 337.959 1386.17 341.501 1386.17 346.209C1386.17 350.917 1385.54 354.417 1384.25 356.709C1382.96 359.001 1380.79 360.834 1377.71 362.251L1386.83 380.668H1376.71L1368.42 363.501H1358.63L1358.58 363.459V380.626H1348.96V332.084H1367.21ZM1358.42 355.918H1368.21C1371.21 355.918 1373.38 355.293 1374.67 354.001C1376 352.709 1376.67 350.626 1376.67 347.751C1376.67 342.293 1373.25 339.584 1366.38 339.584H1358.42V355.918Z" fill="#E10600"></path>
           </svg>
         </a>
-        <span class="f1-footer-tagline">Formula 1 History Archive (1950 &ndash; Present)</span>
+        <span class="f1-footer-tagline">Formula 1 History (1950 &ndash; Present)</span>
       </div>
 
       <nav class="f1-footer-nav" aria-label="Footer Navigation">
         <a href="#eras-chronicle">Eras</a>
         <a href="#hall-of-fame">Hall of Fame</a>
         <a href="#technical-heritage">Technical</a>
-        <a href="#cathedral-circuits">Circuits</a>
+        <a href="#circuits">Circuits</a>
         <!-- <a href="#champions-archive">Champions</a> -->
         <a href="#historical-lore">Lore</a>
         <a href="#maincontent" class="f1-footer-top-btn">&uarr; Back to Top</a>
@@ -1920,6 +1927,11 @@
     <div class="f1-footer-bottom">
       <p class="f1-footer-copy">
         <!-- &copy; 1950&ndash;2026 Formula One World Championship Limited. FIA Formula One World Championship Heritage Archive. -->
+      </p>
+      <p class="f1-video-attribution">
+        Background footage:
+        <a href="https://www.pexels.com/videos/" target="_blank" rel="noopener noreferrer">Pexels</a>
+        (free to use under the Pexels license)
       </p>
       <!-- <div class="f1-footer-legal">
         <a href="#">Privacy Policy</a>
@@ -2152,6 +2164,140 @@
           console.error(error);
         });
     });
+  }());
+</script>
+<script>
+  (function () {
+    var stage = document.querySelector('.f1-history-hero-video-stage');
+    if (!stage) return;
+
+    var videos = stage.querySelectorAll('.f1-history-hero-video');
+    if (videos.length < 2) return;
+
+    var clips = [
+      { src: 'images/f1-hero-01.mp4', poster: 'images/f1-hero-01-poster.jpg' },
+      { src: 'images/f1-hero-02.mp4', poster: 'images/f1-hero-02-poster.jpg' },
+      { src: 'images/f1-hero-03.mp4', poster: 'images/f1-hero-03-poster.jpg' }
+    ];
+    var CROSSFADE = 1.2;          // keep in sync with the CSS transition
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (reduceMotion.matches) {
+      for (var v = 0; v < videos.length; v++) videos[v].pause();
+      return;
+    }
+
+    var current = videos[0];
+    var standby = videos[1];
+    var nextClip = 1;
+    var switching = false;
+    var heroVisible = true;
+
+    function playCurrent() {
+      if (!current || document.hidden || !heroVisible || reduceMotion.matches) return;
+      var promise = current.play();
+      if (promise && typeof promise.catch === 'function') promise.catch(function () {});
+    }
+
+    function pauseAll() {
+      for (var i = 0; i < videos.length; i++) videos[i].pause();
+    }
+
+    // Load the upcoming clip a little before it is needed.
+    function prepareNext() {
+      if (standby.dataset.clip === String(nextClip)) return;
+      standby.dataset.clip = String(nextClip);
+      standby.src = clips[nextClip].src;
+      standby.poster = clips[nextClip].poster;
+      standby.load();
+    }
+
+    function advance() {
+      if (switching || !current.duration) return;
+      switching = true;
+
+      prepareNext();
+      var incoming = standby;
+      var outgoing = current;
+      var started = false;
+
+      function startFade() {
+        if (started) return;
+        started = true;
+        incoming.classList.add('is-active');
+        outgoing.classList.remove('is-active');
+
+        var incomingPlay = incoming.play();
+        if (incomingPlay && typeof incomingPlay.catch === 'function') {
+          incomingPlay.catch(function () {});
+        }
+
+        window.setTimeout(function () {
+          outgoing.pause();
+        }, CROSSFADE * 1000 + 100);
+
+        current = incoming;
+        standby = outgoing;
+        nextClip = (nextClip + 1) % clips.length;
+        standby.dataset.clip = '';
+        switching = false;
+      }
+
+      function fail() {
+        if (started) return;
+        started = true;
+        switching = false;
+      }
+
+      if (incoming.readyState >= 3) {
+        startFade();
+        return;
+      }
+
+      incoming.addEventListener('canplay', startFade, { once: true });
+      incoming.addEventListener('error', fail, { once: true });
+      window.setTimeout(function () {
+        if (!started && incoming.readyState >= 2) {
+          startFade();
+        } else if (!started) {
+          fail();
+        }
+      }, 2000);
+    }
+
+    function handleTimeUpdate() {
+      if (this !== current || switching || !this.duration) return;
+      var remaining = this.duration - this.currentTime;
+
+      if (remaining <= Math.max(5, this.duration * 0.5)) prepareNext();
+      if (remaining <= CROSSFADE) advance();
+    }
+
+    for (var i = 0; i < videos.length; i++) {
+      videos[i].addEventListener('timeupdate', handleTimeUpdate);
+    }
+
+    // Keep the initial clip playing even when autoplay is restored after load.
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        pauseAll();
+      } else {
+        playCurrent();
+      }
+    });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        if (heroVisible) {
+          playCurrent();
+        } else {
+          pauseAll();
+        }
+      }, { threshold: 0.01 }).observe(stage);
+    }
+
+    playCurrent();
   }());
 </script>
 </body>

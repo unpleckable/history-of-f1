@@ -167,11 +167,63 @@ section[id] {
 /* History Hero Section */
 .f1-history-hero {
   position: relative;
-  background: radial-gradient(circle at 85% 15%, rgba(225, 6, 0, 0.12), transparent 45%),
-              linear-gradient(180deg, #101015 0%, #15151e 100%);
+  background: #101015;
   border-bottom: 2px solid var(--f1-border-subtle);
   padding-top: 48px;
   padding-bottom: 56px;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.f1-history-hero-video-stage,
+.f1-history-hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.f1-history-hero-video-stage {
+  z-index: -2;
+  opacity: 0.4;
+  overflow: hidden;
+}
+
+.f1-history-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.f1-history-hero-video.is-active {
+  opacity: 1;
+}
+
+.f1-history-hero-video-overlay {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(225, 6, 0, 0.2), transparent 45%),
+    linear-gradient(180deg, rgba(16, 16, 21, 0.62) 0%, rgba(21, 21, 30, 0.94) 100%);
+  z-index: -1;
+}
+
+.f1-video-attribution {
+  position: relative;
+  margin: 18px 0 0;
+  color: rgba(210, 210, 214, 0.68);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.f1-video-attribution a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .f1-history-hero::before {
@@ -183,6 +235,12 @@ section[id] {
   height: 4px;
   background: linear-gradient(90deg, var(--f1-red) 0%, #ff524d 50%, var(--f1-red) 100%);
   z-index: 10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .f1-history-hero-video-stage {
+    display: none;
+  }
 }
 
 .f1-hero-header-block {
