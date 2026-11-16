@@ -45,7 +45,9 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html,
+  .f1-history-nav-chips,
+  .f1-era-tabs-container {
     scroll-behavior: auto;
   }
 }
@@ -129,6 +131,90 @@ body {
   padding: 0;
   overflow-x: hidden;
   overscroll-behavior: none;
+}
+
+/* Full-page race-start loader */
+.f1-page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, rgba(225, 6, 0, 0.12), transparent 34%),
+    #101015;
+  animation: f1-loader-exit 0.4s ease 1.15s forwards;
+}
+
+.f1-page-loader-inner {
+  position: relative;
+  z-index: 1;
+  width: min(440px, 82vw);
+  text-align: center;
+}
+
+.f1-page-loader-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.f1-page-loader-logo-wrap {
+  position: relative;
+  flex: 0 0 min(260px, 58vw);
+  height: 84px;
+}
+
+.f1-page-loader-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 16px rgba(225, 6, 0, 0.65));
+}
+
+.f1-page-loader-logo-line {
+  fill: var(--f1-red);
+  clip-path: inset(0 100% 0 0);
+  animation: f1-loader-logo-line-draw 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.f1-page-loader-logo-line-1,
+.f1-page-loader-logo-line-2,
+.f1-page-loader-logo-line-3,
+.f1-page-loader-logo-line-4 { animation-delay: 0.05s; }
+
+@keyframes f1-loader-logo-line-draw {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+.f1-page-loader-label {
+  margin: 24px 0 0;
+  color: #a7a7ad;
+  font-family: "Formula1", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes f1-loader-exit {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .f1-page-loader,
+  .f1-page-loader-logo-line,
+  .f1-page-loader-logo {
+    animation-duration: 0.01ms;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+  }
+
+  .f1-page-loader {
+    animation-delay: 0.35s;
+  }
 }
 
 /* Base resets & typography */
@@ -506,6 +592,7 @@ h1.f1-main-title {
   overflow-x: auto;
   white-space: nowrap;
   padding-bottom: 2px;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -659,6 +746,7 @@ h1.f1-main-title {
   overflow-x: auto;
   white-space: nowrap;
   padding: 4px 2px 14px 2px;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
 

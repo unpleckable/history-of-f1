@@ -20,6 +20,23 @@
 </head>
 <body class="relative overflow-x-clip bg-[#15151e] text-white">
 
+<div class="f1-page-loader" role="status" aria-live="polite" aria-label="Loading Formula 1 History">
+  <div class="f1-page-loader-inner">
+    <div class="f1-page-loader-mark">
+      <span class="f1-page-loader-logo-wrap">
+        <svg viewBox="10 32 72 30" class="f1-page-loader-logo" role="img" aria-label="F1">
+          <path class="f1-page-loader-logo-line f1-page-loader-logo-line-1" d="M59.6481 43.9307H41.0563C35.9927 43.9307 34.6879 44.3328 32.1921 46.8076L25.5348 53.4229H17.4167L27.4909 43.3545C31.1388 39.7096 33.1132 39.0225 39.9801 39.0225H64.6549L59.6481 43.9307Z"></path>
+          <path class="f1-page-loader-logo-line f1-page-loader-logo-line-2" d="M58.2673 45.292L53.2604 50.2393H40.9606C38.4467 50.2393 38.0058 50.5097 36.9499 51.6016L35.1647 53.4229H27.6432L33.2262 47.8037C35.5092 45.5238 36.4906 45.292 41.5544 45.292H58.2673Z"></path>
+          <path class="f1-page-loader-logo-line f1-page-loader-logo-line-3" d="M75.0163 39.0225L60.5505 53.4229H52.0124L66.4215 39.0225H75.0163Z"></path>
+          <path class="f1-page-loader-logo-line f1-page-loader-logo-line-4" d="M68.7555 48.9229C69.4035 48.9229 69.9409 49.1382 70.3639 49.5732C70.7869 50.0082 70.9997 50.5428 70.9997 51.1758C70.9996 51.8086 70.7897 52.3425 70.3669 52.7744C69.947 53.2063 69.4101 53.4217 68.7624 53.4219C68.1155 53.4214 67.5766 53.2058 67.1481 52.7715C66.7192 52.3366 66.5026 51.8027 66.5026 51.1699C66.5026 50.537 66.7154 50.0023 67.1413 49.5703C67.5672 49.1383 68.1076 48.9229 68.7555 48.9229ZM68.7526 49.2764C68.2217 49.2764 67.7746 49.4592 67.4176 49.8281C67.0577 50.197 66.8806 50.6412 66.8805 51.166C66.8805 51.691 67.0606 52.1389 67.4176 52.5049C67.7776 52.8737 68.2217 53.0566 68.7526 53.0566C69.2835 53.0566 69.7306 52.8736 70.0876 52.5078C70.4445 52.1419 70.6247 51.6947 70.6247 51.1699C70.6247 50.6449 70.4446 50.1942 70.0876 49.8252C69.7276 49.4563 69.2835 49.2734 68.7526 49.2734V49.2764Z"></path>
+          <text class="f1-page-loader-logo-line f1-page-loader-logo-line-4" x="68.75" y="51.9" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="2.5" font-weight="700">R</text>
+        </svg>
+      </span>
+    </div>
+    <p class="f1-page-loader-label">Formula One History</p>
+  </div>
+</div>
+
 <!-- ==================== OFFICIAL F1 HISTORY HEADER ==================== -->
 <header class="f1-site-header">
   <div class="f1-history-container f1-header-inner">
@@ -100,10 +117,10 @@
           
           <div class="f1-hero-article-body f1-history-prose">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              The return of the V8 engine to Formula 1 in 2030 will mark a significant change in the sport's technical regulations. This move is expected to bring back the raw power and sound that fans have missed since the V8 engines were phased out.
             </p>
             <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              The V8 engines will debut in the 2030 Rwanda Grand Prix. This will be the first race to feature the new engine regulations, marking the beginning of a new era in Formula 1.
             </p>
 
             <!-- <div class="f1-history-quote">
@@ -1943,6 +1960,27 @@
     </div>
   </div>
 </footer>
+<script>
+  (function () {
+    var loader = document.querySelector('.f1-page-loader');
+    if (!loader) return;
+
+    function dismissLoader() {
+      loader.classList.add('is-dismissed');
+      window.setTimeout(function () {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 650);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        window.setTimeout(dismissLoader, 900);
+      }, { once: true });
+    } else {
+      window.setTimeout(dismissLoader, 900);
+    }
+  }());
+</script>
 <script>
   (function () {
     var header = document.querySelector('.f1-site-header');
