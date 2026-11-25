@@ -3,6 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
   <title>F1 History</title>
   <meta name="description" content="Explore the comprehensive history of the FIA Formula One World Championship from 1950 to the present day: iconic eras, legendary world champions, technical revolutions, and cathedral circuits.">
   
@@ -1936,7 +1945,7 @@
         <a href="#technical-heritage">Technical</a>
         <a href="#circuits">Circuits</a>
         <!-- <a href="#champions-archive">Champions</a> -->
-        <a href="#historical-lore">Lore</a>
+        <a href="#historical-lore">Quotes</a>
         <a href="#maincontent" class="f1-footer-top-btn">&uarr; Back to Top</a>
       </nav>
     </div>
@@ -2044,10 +2053,6 @@
       new ResizeObserver(updateScrollOffset).observe(header);
     }
 
-    if (window.location.hash) {
-      var initialTarget = document.getElementById(window.location.hash.slice(1));
-      if (initialTarget) scrollToTarget(initialTarget, false);
-    }
   }());
 </script>
 <script>  
